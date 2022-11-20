@@ -1,2 +1,1 @@
-# react-native-pipeline
-CI/CD Pipeline for React Native with Bitrise
+# CI/CD Pipeline for React Native with Bitrise
