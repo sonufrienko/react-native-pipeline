@@ -1,0 +1,29 @@
+name: Tests
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./app
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install
+        run: npm i
+
+      - name: run typecheck
+        run: npm run typecheck
+
+      - name: run prettier check for code styling
+        run: npm run prettier
+
+      - name: run eslint check for code errors
+        run: npm run lint
